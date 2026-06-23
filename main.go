@@ -10,34 +10,34 @@ import (
 	"time"
 )
 
-// Client_97e796 is an HTTP client wrapper
-type Client_97e796 struct {
+// Client_6281dc is an HTTP client wrapper
+type Client_6281dc struct {
 	BaseURL    string
 	HTTPClient *http.Client
 	ProjectID  string
 }
 
-// Response_97e796 holds the API response
-type Response_97e796 struct {
+// Response_6281dc holds the API response
+type Response_6281dc struct {
 	Status    int                    `json:"status"`
 	Data      map[string]interface{} `json:"data,omitempty"`
 	Timestamp string                 `json:"timestamp"`
 	ProjectID string                 `json:"project_id"`
 }
 
-// NewClient_97e796 creates a new HTTP client
-func NewClient_97e796(baseURL string) *Client_97e796 {
-	return &Client_97e796{
+// NewClient_6281dc creates a new HTTP client
+func NewClient_6281dc(baseURL string) *Client_6281dc {
+	return &Client_6281dc{
 		BaseURL:   baseURL,
-		ProjectID: "97e796",
+		ProjectID: "6281dc",
 		HTTPClient: &http.Client{
 			Timeout: 10 * time.Second,
 		},
 	}
 }
 
-// Get_97e796 performs a GET request
-func (c *Client_97e796) Get_97e796(path string) (*Response_97e796, error) {
+// Get_6281dc performs a GET request
+func (c *Client_6281dc) Get_6281dc(path string) (*Response_6281dc, error) {
 	url := c.BaseURL + path
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
@@ -56,7 +56,7 @@ func (c *Client_97e796) Get_97e796(path string) (*Response_97e796, error) {
 	var data map[string]interface{}
 	_ = json.Unmarshal(body, &data)
 
-	return &Response_97e796{
+	return &Response_6281dc{
 		Status:    resp.StatusCode,
 		Data:      data,
 		Timestamp: time.Now().Format(time.RFC3339),
@@ -69,8 +69,8 @@ func main() {
 	if base == "" {
 		base = "https://httpbin.org"
 	}
-	client := NewClient_97e796(base)
-	result, err := client.Get_97e796("/get")
+	client := NewClient_6281dc(base)
+	result, err := client.Get_6281dc("/get")
 	if err != nil {
 		log.Fatalf("request failed: %v", err)
 	}

